@@ -1,0 +1,12 @@
+{
+  "name": "Lahcen Edaif",
+  "tagline": "Développeur .NET Fullstack",
+  "subtitle": "Concevoir des solutions évolutives avec les technologies modernes",
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact"
+  }
+}

@@ -1,6 +1,18 @@
-import "./App.css";
-function App() {
-  return <h3 className="font-bold text-center text-gray-600">Portfolio</h3>;
-}
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./i18n/config";
+import MainLayout from "./Layouts/MainLayout";
+import Home from "./pages/Home";
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default App;
