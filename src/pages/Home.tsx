@@ -1,9 +1,10 @@
 import type { FC } from "react";
+import Hero from "../components/Hero";
 
 const Home: FC = () => {
   return (
     <>
-      <h3> HOME</h3>
+      <Hero />
     </>
   );
 };
