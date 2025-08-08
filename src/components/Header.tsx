@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Globe } from "lucide-react";
+import LanguageSelect from "./Select/LanguageSelect";
 
 const Header = () => {
   const { t, i18n } = useTranslation("common");
@@ -23,7 +24,7 @@ const Header = () => {
       id: "contact",
     },
   ];
-  const changeLanguage = (lng: string) => {
+  const changeLanguage = (lng?: string) => {
     i18n.changeLanguage(lng).catch((err: unknown) => {
       console.log(err);
     });
@@ -48,17 +49,10 @@ const Header = () => {
         </nav>
         <div className="flex items-center space-x-4">
           <Globe className="w-4 h-4 text-purple-400" />
-          <select
-            value={i18n.language}
-            onChange={(e) => changeLanguage(e.target.value)}
-            className="bg-gray-800 border border-cyan-500/40 rounded px-2 py-1 text-sm focus:outline-none focus:border-purple-400 text-gray-300 cursor-pointer"
-          >
-            <option value="en">&#x1F1EC;&#x1F1E7;</option>
-            <option value="fr">&#x1F1EB;&#x1F1F7;</option>
-            <option value="es"> &#x1F1EA;&#x1F1F8;</option>
-            <option value="ar">&#x1F1F8;&#x1F1E6;</option>
-            <option value="he">✡︎</option>
-          </select>
+          <LanguageSelect
+            onChangeLanguage={changeLanguage}
+            currentLanguage={i18n.language.split("-")[0]}
+          />
         </div>
       </div>
     </header>
