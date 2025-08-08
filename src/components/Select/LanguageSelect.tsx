@@ -17,7 +17,7 @@ const LanguageSelect: FC<LanguageSelectProps> = ({
   const formatOptionLabel = (option: LanguageOption) => {
     return (
       <div className="flex items-center space-x-2">
-        <img src={option.icon} className="w-4 h-3" alt="" />
+        <img src={option.icon} className="w-4 h-3" alt={option.label} />
         <span>{option.label}</span>
       </div>
     );
