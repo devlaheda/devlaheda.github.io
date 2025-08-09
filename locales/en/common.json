@@ -9,5 +9,31 @@
     "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Passionate .NET developer with expertise in building enterprise-grade applications. I specialize in creating robust backend systems and intuitive frontend experiences using the latest Microsoft technologies.",
+    "experience": "5+ Years Experience",
+    "projects": "50+ Projects Completed",
+    "clients": "20+ Happy Clients"
+  },
+  "skills": {
+    "title": "Technical Expertise",
+    "backend": "Backend Development",
+    "frontend": "Frontend Technologies",
+    "database": "Database Management",
+    "cloud": "Cloud & DevOps"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewProject": "View Project",
+    "viewCode": "View Code"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Ready to discuss your next project? Let's create something amazing together.",
+    "email": "Email Me",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
   }
 }
