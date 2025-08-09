@@ -3,6 +3,7 @@ import { Globe, Menu, X } from "lucide-react";
 import LanguageSelect from "./Select/LanguageSelect";
 import { useEffect, useState } from "react";
 import { getDir, setDir, setLang } from "../utils/LanguageUtils";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const { t, i18n } = useTranslation("common");
@@ -38,20 +39,20 @@ const Header = () => {
     });
   };
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-cyan-500/30">
+    <header className="sticky top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-cyan-500/30">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <div className="text-xl font-bold text-cyan-400 hover:text-purple-400 transition-colors cursor-pointer">
           &lt;{t("name").split(" ")[0]}/&gt;
         </div>
         <nav className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
-            <a
+            <NavLink
               key={link.id}
-              href={`#${link.id}`}
+              to={`/#${link.id}`}
               className="hover:text-cyan-400 transition-colors"
             >
               {t(`nav.${link.id}`)}
-            </a>
+            </NavLink>
           ))}
         </nav>
         <div className="flex items-center space-x-4">
@@ -75,16 +76,16 @@ const Header = () => {
       {isMobileMenuOpen && (
         <nav className="md:hidden bg-gray-900 p-4 flex flex-col space-y-4">
           {navLinks.map((link) => (
-            <a
+            <NavLink
               key={link.id}
-              href={`#${link.id}`}
+              to={`/#${link.id}`}
               className="hover:text-cyan-400 transition-colors"
               onClick={() => {
                 setIsMobileMenuOpen(false);
               }}
             >
               {t(`nav.${link.id}`)}
-            </a>
+            </NavLink>
           ))}
         </nav>
       )}

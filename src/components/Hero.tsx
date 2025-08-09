@@ -1,36 +1,33 @@
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 import type { FC } from "react";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 
 const Hero: FC = () => {
   const [t] = useTranslation("common");
+
   const getGridItemColor = (index: number): string => {
     if (index % 3 === 0) return "bg-cyan-400/20";
     if (index % 3 === 1) return "bg-purple-400/20";
     return "bg-blue-400/20";
   };
-  const scrollToSection = (sectionId: Section): void => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
-  };
+
   return (
     <section
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      <div className="absolute inset-0 opacity-5">
-        <div className="grid grid-cols-12  gap-4 transform rotate-20 scale-100">
+      <div className="absolute inset-1 opacity-5">
+        <div className="grid grid-cols-12  gap-4 transform rotate-5 scale-100">
           {Array.from({ length: 144 }).map((_, i: number) => (
             <div
               key={i}
-              className={`aspect-square animate-pulse ${getGridItemColor(i)}`}
-              style={{
-                animationDelay: `${i * 0.1}s`,
-              }}
+              className={`aspect-square animate-bounce  ${getGridItemColor(i)}`}
+              style={{ animationDelay: (i * 0.1).toString().concat("s") }}
             />
           ))}
         </div>
       </div>
-
       <div className="text-center z-10 max-w-4xl mx-auto px-4">
         <div className="mb-8">
           <div className="text-sm text-cyan-400 mb-2">
@@ -74,14 +71,14 @@ const Hero: FC = () => {
           </a>
         </div>
 
-        <button
-          onClick={() => {
-            scrollToSection("about");
-          }}
-          className="animate-bounce hover:text-cyan-400 focus:outline-none focus:text-purple-400 transition-colors"
-        >
-          <ChevronDown className="w-8 h-8" />
-        </button>
+        <div className="flex justify-center">
+          <NavLink
+            to="/#about"
+            className=" animate-bounce hover:text-cyan-400 focus:outline-none focus:text-purple-400 transition-colors"
+          >
+            <ChevronDown className="" />
+          </NavLink>
+        </div>
       </div>
     </section>
   );
